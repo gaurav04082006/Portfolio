@@ -19,16 +19,21 @@ background-image: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72, 
 
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .menu-toggle {
-  display: none;
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
+    display: block;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    margin-left: auto;
+    position: absolute;
+    right: 10px;   /* Right corner */
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 
@@ -491,20 +496,52 @@ background-image: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72, 
 
 /* Desktop default */
 .menu-toggle {
-  display: none;
+  display: block;
   font-size: 30px;
   color: white;
   cursor: pointer;
+  margin-left: auto;
 }
 
 /* Desktop nav */
 .nav-links {
-  display: flex;
+  display: none;
   list-style: none;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  width: 230px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  flex-direction: column;
+  padding: 10px 0;
+  z-index: 999;
+}
+
+.nav-links.active {
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0;
+  text-align: left;
+}
+
+.nav-links li a {
+  display: block;
+  padding: 12px 20px;
+  color: black;
+  text-decoration: none;
+}
+
+.nav-links li a:hover {
+  background: #00adb5;
+  color: white;
 }
 
 /* Mobile view */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
 
   .menu-toggle {
     display: block;
@@ -535,7 +572,7 @@ background-image: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72, 
   .nav-links li {
     margin: 12px 0;
   }
-}
+} */
 
 /* ===========================
    GauravBot
@@ -548,12 +585,12 @@ background-image: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72, 
     width:65px;
     height:65px;
     border-radius:50%;
-    background:#007bff;
+    background:#df485c;
     color:white;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:30px;
+    font-size:40px;
     cursor:pointer;
     box-shadow:0 5px 20px rgba(0,0,0,.3);
     z-index:9999;
