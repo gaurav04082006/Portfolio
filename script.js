@@ -152,7 +152,7 @@ closeChat.addEventListener("click", () => {
     chatToggle.style.display = "flex";
 });
 
-const API_KEY = "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";
+const API_KEY = "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";
 
 const sendBtn = document.getElementById("send-btn");
 const userInput = document.getElementById("user-input");
